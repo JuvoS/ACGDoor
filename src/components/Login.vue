@@ -1,5 +1,5 @@
 <template>
-  <div>this is {{title}} login</div>
+  <div>this is {{ title }} login</div>
 </template>
 
 <script>
@@ -14,5 +14,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

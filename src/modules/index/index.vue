@@ -1,12 +1,35 @@
 <template>
-  <div id="base" v-wechat-title="$route.meta.title">
+  <BaseBoard>
     <router-view></router-view>
-  </div>
+  </BaseBoard>
 </template>
 
 <script>
-export default {};
+export default {
+  components: {
+    BaseBoard: () => import("@/components/BaseBoard")
+  }
+};
 </script>
 
-<style scoped>
+<style>
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  position: relative;
+  background: #f0f2f5;
+  min-height: 100vh;
+  width: 100%;
+  color: #333;
+  /* height: auto !important; */
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
 </style>

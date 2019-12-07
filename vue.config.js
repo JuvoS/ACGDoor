@@ -3,7 +3,7 @@ function resolve(dir) {
   return path.join(__dirname, dir); //path.join(__dirname)设置绝对路径
 }
 module.exports = {
-  baseUrl: "/",
+  publicPath: "/",
   chainWebpack: config => {
     config.resolve.alias
       .set("@", resolve("./src"))
@@ -31,6 +31,10 @@ module.exports = {
     // // 只有entry属性时，直接用字符串表示模块入口
     // client: 'src/modules/client/client.js'
 
+    prepare: {
+      entry: "src/modules/prepare/index.js",
+      title: "ACG门户-ACG Door"
+    },
     index: {
       entry: "src/modules/index/index.js",
       title: "ACG门户-ACG Door"
@@ -45,6 +49,14 @@ module.exports = {
       title: "关于ACG-About ACG",
       template: "public/index.html"
     }
+  },
+  devServer: {
+    host: "localhost",
+    port: 7466,
+    https: false,
+    hotOnly: false,
+    proxy: null // 设置代理
+    // before: app => {}
   },
   // 第三方插件配置
   pluginOptions: {
