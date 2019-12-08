@@ -6,11 +6,8 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "login",
-    component: r => {
-      require(["../../components/Login"], r);
-    },
-    meta: { title: "share 登录" }
+    name: "about",
+    component: () => import("./views/")
   }
 ];
 

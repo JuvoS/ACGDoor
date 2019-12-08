@@ -1,28 +1,27 @@
 <template>
   <div class="com-markdown-preview">
-    <h3>关于 Deno 中文社区</h3>
+    <h3>关于 ACG 中文社区</h3>
     <p>
-      Deno 中文社区，由一批热爱 Deno.js
-      技术的工程师发起，目前已经吸引了互联网各个公司的专业技术人员加入。Deno
-      的开发已经日渐完善，可以开始用 Deno 尝试一些小工具。 目前 Deno
+      ACG 中文社区，由一批热爱
+      ACG的工程师/设计师发起，目前已经吸引了互联网各个公司的专业技术人员加入。ACG
+      的开发已经日渐完善，可以开始用 ACG 尝试一些小工具。 目前 ACG
       的生态以及社区还不完善。特别是国内交流社区更是寥寥无几，如果各位身边有对
-      Deno 感兴趣的，可以拉进群里。 同时，Deno
-      中文社区网站，大家可以多分享交流。
+      ACG 感兴趣的，可以拉进群里。 同时，ACG 中文社区网站，大家可以多分享交流。
     </p>
     <h3>社区参与须知</h3>
     <p>
-      Deno 中文社区还有很多工作要做。 不论你对 Deno
+      ACG 中文社区还有很多工作要做。 不论你对 ACG
       了解程度如何，都可以有不同的参与方式。
     </p>
     <ul>
       <li>1.你希望什么功能或者特性，可以提 feature issue</li>
       <li>
-        2.你对 Deno 感兴趣并且有一定程度的了解，可以尝试 deno-china/website API
+        2.你对 ACG 感兴趣并且有一定程度的了解，可以尝试 ACG-china/website API
         项目。
       </li>
       <li>
-        3.你对 Deno 还不够了解，但对前端比较熟悉，你可以参与
-        deno-china/website-fe 前端部分。
+        3.你对 ACG 还不够了解，但对前端比较熟悉，你可以参与 ACG-china/website-fe
+        前端部分。
       </li>
       <li>
         4.你有比较好的文字组织能力，可以撰写 getting start 和 about 相关的内容。
@@ -35,13 +34,8 @@
     <h3>学习资料</h3>
     <ul>
       <li>
-        <a href="https://github.com/chenshenhai/deno_note"
-          >https://github.com/chenshenhai/deno_note</a
-        >
-      </li>
-      <li>
-        <a href="https://github.com/denolib/awesome-deno"
-          >https://github.com/denolib/awesome-deno</a
+        <a href="https://github.com/JuvoS/ACGDoor"
+          >https://github.com/JuvoS/ACGDoor</a
         >
       </li>
     </ul>
