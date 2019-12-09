@@ -4,8 +4,6 @@ import router from "./router";
 import Register from "@/config/register";
 
 Register.init();
-Vue.config.productionTip = false;
-
 new Vue({
   router,
   render: h => h(Base)

@@ -1,9 +1,9 @@
 import Vue from "vue";
 import Base from "./index.vue";
 import router from "./router";
-import config from "@/config/";
+import Register from "@/config/register";
 
-Vue.prototype.$config = config;
+Register.init();
 
 new Vue({
   router,

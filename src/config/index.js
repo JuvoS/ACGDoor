@@ -8,6 +8,7 @@ export default {
   projectName: "ACG Door",
   copyright: "© 2019 All Rights Reserved ACG",
   powered: "ACG",
+  version: "0.0.1",
   enableAuth: false,
 
   http: {

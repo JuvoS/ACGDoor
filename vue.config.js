@@ -48,6 +48,11 @@ module.exports = {
       entry: "src/modules/about/index.js",
       title: "关于ACG-About ACG",
       template: "public/index.html"
+    },
+    book: {
+      entry: "src/modules/book/index.js",
+      title: "ACG书乡-ACG Book",
+      template: "public/index.html"
     }
   },
   devServer: {
