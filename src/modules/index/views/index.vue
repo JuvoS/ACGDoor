@@ -56,6 +56,20 @@ export default {
     box-sizing: border-box;
   }
 }
+@media screen and (max-width: 900px) and (min-width: 600px) {
+  .cg {
+    &-item {
+      flex: 0 0 50%;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .cg {
+    &-item {
+      flex: 0 0 100%;
+    }
+  }
+}
 </style>
 
 <style scoped></style>
