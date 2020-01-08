@@ -5,9 +5,9 @@ const baseUrl =
     : `http://127.0.0.1:7466`;
 
 export default {
-  projectName: "ACG Door",
-  copyright: "© 2019 All Rights Reserved ACG",
-  powered: "ACG",
+  projectName: "TaiS",
+  copyright: "© 2019 All Rights Reserved Juvos",
+  powered: "Juvos",
   version: "0.0.1",
   enableAuth: false,
 

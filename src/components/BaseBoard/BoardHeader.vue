@@ -10,12 +10,11 @@
         <!-- <span>中文社区</span> -->
       </a>
       <nav>
-        <a href="/" v-urltrans>首页</a>
         <a href="/book" v-urltrans>书乡</a>
-        <a href="/" target="_blank" rel="noopener noreferrer" v-urltrans>官网</a>
+        <!-- <a href="/" target="_blank" rel="noopener noreferrer" v-urltrans>官网</a>
         <a href="/about" v-urltrans>关于</a>
         <a href="/share" v-urltrans>共享</a>
-        <a href="/prepare" v-urltrans>登录</a>
+        <a href="/prepare" v-urltrans>登录</a> -->
       </nav>
     </div>
   </header>
