@@ -31,24 +31,10 @@ module.exports = {
     // // 只有entry属性时，直接用字符串表示模块入口
     // client: 'src/modules/client/client.js'
 
-    prepare: {
-      entry: "src/modules/prepare/index.js",
-      title: "ACG门户-ACG Door"
-    },
     index: {
       entry: "src/modules/index/index.js",
       title: "ACG门户-ACG Door"
     },
-    // share: {
-    //   entry: "src/modules/share/index.js",
-    //   title: "ACG分享-ACG Share",
-    //   template: "public/index.html"
-    // },
-    // about: {
-    //   entry: "src/modules/about/index.js",
-    //   title: "关于ACG-About ACG",
-    //   template: "public/index.html"
-    // },
     book: {
       entry: "src/modules/book/index.js",
       title: "ACG书乡-ACG Book",
