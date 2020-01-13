@@ -39,19 +39,24 @@ module.exports = {
       entry: "src/modules/index/index.js",
       title: "ACG门户-ACG Door"
     },
-    share: {
-      entry: "src/modules/share/index.js",
-      title: "ACG分享-ACG Share",
-      template: "public/index.html"
-    },
-    about: {
-      entry: "src/modules/about/index.js",
-      title: "关于ACG-About ACG",
-      template: "public/index.html"
-    },
+    // share: {
+    //   entry: "src/modules/share/index.js",
+    //   title: "ACG分享-ACG Share",
+    //   template: "public/index.html"
+    // },
+    // about: {
+    //   entry: "src/modules/about/index.js",
+    //   title: "关于ACG-About ACG",
+    //   template: "public/index.html"
+    // },
     book: {
       entry: "src/modules/book/index.js",
       title: "ACG书乡-ACG Book",
+      template: "public/index.html"
+    },
+    model: {
+      entry: "src/modules/model/index.js",
+      title: "ACG书乡-ACG Model",
       template: "public/index.html"
     }
   },

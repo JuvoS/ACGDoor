@@ -1,8 +1,8 @@
 <template>
-  <div class="card">
-    <div class="card-img">
-      <img :src="imgUrl" />
-    </div>
+  <div class="card" @click="$emit('on-do')">
+    <!-- <div class="card-img">
+      <img :src="imgUrl">
+    </div>-->
     <div class="card-content">
       <div class="card-content-title">{{ title }}</div>
       <div class="card-content-other"></div>
@@ -16,11 +16,10 @@
         </div>
       </div>
       <div class="card-content-footer">
-        <div class="card-content-footer-time">
-          {{ updatedAt }}
-        </div>
+        <div class="card-content-footer-time">{{ updatedAt }}</div>
         <div class="card-content-footer-url">
-          <a :href="downUrl">下载</a>
+          <!-- <a :href="downUrl">下载</a> -->
+          <a>查看</a>
           <span>{{ downPass }}</span>
         </div>
       </div>

@@ -9,8 +9,11 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
+    "dat.gui": "^0.7.6",
+    "dayjs": "^1.8.19",
     "hydrogen-js-sdk": "^2.2.2",
     "marked": "^0.7.0",
+    "three": "^0.112.1",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vue-wechat-title": "^2.0.5"
@@ -24,9 +27,9 @@
     "vue-template-compiler": "^2.5.17"
   },
   "eslintConfig": {
-    "root": true,
+    "root": false,
     "env": {
-      "node": true
+      "node": false
     },
     "extends": [
       "plugin:vue/essential",

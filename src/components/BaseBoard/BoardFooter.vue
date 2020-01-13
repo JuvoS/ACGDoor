@@ -3,7 +3,10 @@
     <div class="inner">
       <div class="inner-content">
         <a class="source" href="https://github.com/JuvoS/ACGDoor">源码地址</a>
-        <div class="desc">ACGDoor 致力于 ACG 技术学习与研究。</div>
+        <div class="desc">
+          本站所有资源均来源于网络，仅提供于技术学习与研究，若存在侵权请联系
+          <a>站长</a>处理。
+        </div>
         <div class="sponsor">目前还没有赞助商。</div>
       </div>
       <div class="inner-power">

@@ -8,6 +8,8 @@ Bmob.initialize("4509c12b05a95f1c", "taisha");
 Vue.prototype.Bmob = Bmob;
 Bmob.debug(true);
 
+window._ = require("lodash");
+
 const init = () => {
   Vue.config.productionTip = false;
   Vue.prototype.$axios = axios;

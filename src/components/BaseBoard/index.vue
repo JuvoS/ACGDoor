@@ -85,7 +85,7 @@ export default {
     margin: auto;
     flex: 1 1;
     display: flex;
-    padding: 30px 0;
+    padding: 10px 0;
     max-width: 1400px;
     flex-direction: row;
     width: 90%;

@@ -1,22 +1,27 @@
 <template>
-  <div class="cg">
-    <CardModel
-      v-for="(item, key) in cardList"
-      :key="key"
-      :imgUrl="item.picUrl"
-      :title="item.title"
-      :downUrl="item.downUrl"
-      :downPass="item.downPass"
-      class="cg-item"
-    ></CardModel>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+  <div class="wrapper">
+    <div class="cg">
+      <CardModel
+        v-for="(item, key) in cardList"
+        :key="key"
+        :imgUrl="item.picUrl"
+        :title="item.title"
+        :downUrl="item.downUrl || ''"
+        :downPass="item.downPass || ''"
+        :category="item.category || []"
+        :updatedAt="item.updatedAt"
+        class="cg-item"
+      ></CardModel>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </div>
 </template>
 
 <script>
+import dayjs from "dayjs";
 export default {
   props: {
     title: {
@@ -39,13 +44,43 @@ export default {
     fetchAnt() {
       const query = Bmob.Query("ant");
       query.find().then(res => {
-        this.cardList = res;
+        console.log(res);
+        let tmp = _.filter(res, o => {
+          return o.isShow != "no";
+        });
+        tmp = _.orderBy(tmp, "updatedAt", "desc");
+        tmp.forEach(ele => {
+          if (ele.category) ele.category = ele.category.split("#");
+          ele.updatedAt = dayjs(ele.updatedAt).format("YYYY-MM-DD");
+        });
+
+        this.cardList = tmp;
       });
     }
   }
 };
 </script>
 <style lang="less" scoped>
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  &-filter {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &-left {
+      display: flex;
+      justify-content: flex-start;
+    }
+    &-right {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
 .cg {
   width: 100%;
   display: flex;
