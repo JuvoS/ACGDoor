@@ -17,10 +17,10 @@ import { initControls } from "./lib/controls";
 import { initMTLObj, initPointObj, initLineObj, initFaceObj } from "./lib/obj";
 import "./utils/MTLLoader";
 import "./utils/OBJLoader";
-let MODOX = () => {};
-let renderer, scene, camera, controls, gui, ambientLight, pointLight;
+var MODOX = () => {};
+var renderer, scene, camera, controls, gui, ambientLight, pointLight;
 
-let Init = (id, devState) => {
+var Init = (id, devState) => {
   const bW = document.getElementById(id).offsetWidth;
   const bH = document.getElementById(id).offsetHeight;
 
@@ -43,7 +43,7 @@ let Init = (id, devState) => {
 };
 
 //窗口变动触发的函数
-let onWindowResize = (bW, bH) => {
+var onWindowResize = (bW, bH) => {
   camera.aspect = bW / bH;
   camera.updateProjectionMatrix();
   render();
@@ -51,7 +51,7 @@ let onWindowResize = (bW, bH) => {
   renderer.setSize(bW, bH);
 };
 
-let animate = () => {
+var animate = () => {
   render();
 
   //更新相关位置
@@ -62,7 +62,7 @@ let animate = () => {
   requestAnimationFrame(animate);
 };
 
-let render = () => {
+var render = () => {
   renderer.render(scene, camera);
 };
 
