@@ -40,6 +40,11 @@ module.exports = {
       title: "ACG书乡-ACG Book",
       template: "public/index.html"
     },
+    cssanim: {
+      entry: "src/modules/cssanim/index.js",
+      title: "ACG书乡-ACG CSS Anim",
+      template: "public/index.html"
+    },
     model: {
       entry: "src/modules/model/index.js",
       title: "ACG书乡-ACG Model",
@@ -56,6 +61,11 @@ module.exports = {
   },
   // 第三方插件配置
   pluginOptions: {
-    // ...
+    'style-resources-loader': {
+      preProcessor: 'sass',
+      patterns: [
+        'D:\\JuvoS\\work\\codeLab\\binsh\\ACGDoor\\src\\assets\\variable.less'
+      ]
+    }
   }
 };
