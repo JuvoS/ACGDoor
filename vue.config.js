@@ -61,11 +61,9 @@ module.exports = {
   },
   // 第三方插件配置
   pluginOptions: {
-    'style-resources-loader': {
-      preProcessor: 'sass',
-      patterns: [
-        'D:\\JuvoS\\work\\codeLab\\binsh\\ACGDoor\\src\\assets\\variable.less'
-      ]
+    "style-resources-loader": {
+      preProcessor: "sass",
+      patterns: []
     }
   }
 };
