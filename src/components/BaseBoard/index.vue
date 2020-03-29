@@ -68,6 +68,10 @@ export default {
     window.addEventListener("devtoolschange", function(e) {
       if (e.detail.open && !isShow) {
         console.log("*******************");
+        console.log("Name:Juvos");
+        console.log("Email:704921698@qq.com");
+        console.log("Tel:+86 18108197129");
+        console.log("Dir:Web Coder/Designer/Drawer");
         isShow = true;
       }
     });

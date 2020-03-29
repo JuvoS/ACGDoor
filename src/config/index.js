@@ -2,12 +2,12 @@ const { hostname, port, protocol } = window.location;
 const baseUrl =
   process.env.NODE_ENV === "production"
     ? `${protocol}//${hostname}:${port}/`
-    : `http://127.0.0.1:7466`;
+    : `http://127.0.0.1:8866`;
 
 export default {
-  projectName: "ACG Door",
-  copyright: "© 2019 All Rights Reserved ACG",
-  powered: "ACG",
+  projectName: "JuvoS Resume",
+  copyright: "© 2020 All Rights Reserved JuvoS",
+  powered: "JuvoS",
   version: "0.0.1",
   enableAuth: false,
 
@@ -17,6 +17,6 @@ export default {
 
     timeout: 10 * 1000
   },
-  powerURL: "acg.com",
-  restURL: "http://127.0.0.1:" + "6321"
+  powerURL: "resume.qimuren.com",
+  restURL: "http://127.0.0.1:" + "8866"
 };

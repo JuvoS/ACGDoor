@@ -1,28 +1,26 @@
 <template>
   <div style="width:100%;min-height:300px;">
-    <ContentLoader
-      :height="160"
-      :width="400"
-      :speed="2"
-      primaryColor="#8080c0"
-      secondaryColor="#ff0080"
-    >
-      <rect x="0" y="0" rx="3" ry="3" width="70" height="10" />
-      <rect x="80" y="0" rx="3" ry="3" width="100" height="10" />
-      <rect x="190" y="0" rx="3" ry="3" width="10" height="10" />
-      <rect x="15" y="20" rx="3" ry="3" width="130" height="10" />
-      <rect x="155" y="20" rx="3" ry="3" width="130" height="10" />
-      <rect x="15" y="40" rx="3" ry="3" width="90" height="10" />
-      <rect x="115" y="40" rx="3" ry="3" width="60" height="10" />
-      <rect x="185" y="40" rx="3" ry="3" width="60" height="10" />
-      <rect x="0" y="60" rx="3" ry="3" width="30" height="10" />
-      <circle cx="306.17" cy="133.21" r="50.54" />
-    </ContentLoader>
+    <SnowBoard style="width:100%;min-height:300px;"></SnowBoard>
+    <!-- <VNavTab></VNavTab> -->
+    <!-- <header>
+      <h1 class="title slide-bar">I'm alphardex.</h1>
+      <p class="subtitle slide-bar">A CSS Wizard</p>
+    </header> -->
+
+    <div class="loading">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
   </div>
 </template>
 
 <script>
 import ContentLoader from "@/components/ContentLoader";
+import VNavTab from "@/components/BaseMenu/VNavTab";
+import SnowBoard from "@/components/SnowBoard";
 export default {
   props: {
     title: {
@@ -31,93 +29,143 @@ export default {
     }
   },
   components: {
-    ContentLoader
+    ContentLoader,
+    VNavTab,
+    SnowBoard
   }
 };
 </script>
 
-<style scoped>
-.com-markdown-preview,
-.editor-preview-active,
-.editor-preview-active-side {
-  background: #fff !important;
-  padding: 20px;
-  font-size: 16px;
-  color: #666;
-  font-family: Helvetica Neue, Arial, Hiragino Sans GB, STHeiti, Microsoft YaHei,
-    serif;
-  -moz-tab-size: 4;
-  tab-size: 4;
-  word-break: break-all;
-}
-.com-markdown-preview > :first-child,
-.editor-preview-active-side > :first-child,
-.editor-preview-active > :first-child {
-  margin-top: 0 !important;
-}
-.com-markdown-preview h3,
-.editor-preview-active-side h3,
-.editor-preview-active h3 {
-  font-size: 1.25em;
-  font-weight: 600;
-  line-height: 1.25;
-  margin: 24px 0 16px;
-}
-
-.com-markdown-preview p,
-.editor-preview-active-side p,
-.editor-preview-active p {
-  font-size: 16px;
-  line-height: 1.8;
-  margin: 0 0 16px;
-}
-.com-markdown-preview ol,
-.com-markdown-preview ul,
-.editor-preview-active-side ol,
-.editor-preview-active-side ul,
-.editor-preview-active ol,
-.editor-preview-active ul {
-  padding-left: 2em;
-  margin-bottom: 16px;
-  margin-top: 0;
-}
-.com-markdown-preview ol li,
-.com-markdown-preview ul li,
-.editor-preview-active-side ol li,
-.editor-preview-active-side ul li,
-.editor-preview-active ol li,
-.editor-preview-active ul li {
-  line-height: 1.5;
+<style lang="less" scoped>
+.hovcard {
+  height: 300px;
+  display: grid;
+  place-items: center;
 }
 </style>
-<style>
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0;
-  margin-bottom: 0.5em;
-  color: rgba(0, 0, 0, 0.85);
-  font-weight: 500;
+<style lang="scss" scoped>
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+
+.slide-bar {
+  position: relative;
+  color: transparent;
+  animation: fill-text-white 2s 1.6s forwards infinite;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #35b9f1;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: slide-in-out 2s 3s cubic-bezier(0.75, 0, 0, 1) forwards infinite;
+  }
 }
-p {
-  margin-top: 0;
-  margin-bottom: 1em;
+
+@keyframes slide-in-out {
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  50.1% {
+    transform-origin: right;
+  }
+
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
 }
-dl,
-ol,
-ul {
-  margin-top: 0;
-  margin-bottom: 1em;
+
+@keyframes fill-text-white {
+  to {
+    color: white;
+  }
 }
-a {
-  color: #1890ff;
-  text-decoration: none;
-  background-color: transparent;
-  outline: none;
-  cursor: pointer;
-  transition: color 0.3s;
+
+header {
+  .title,
+  .subtitle {
+    width: 250px;
+    height: 30px;
+  }
+
+  .title {
+    margin: 0;
+    font-family: Lora, serif;
+    font-size: 32px;
+    line-height: 30px;
+
+    &::before {
+      background: #ff4081;
+    }
+  }
+
+  .subtitle {
+    margin: 10px 0 0 0;
+    font-family: Lato, sans-serif;
+    font-size: 12px;
+    line-height: 30px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    animation-delay: 3.2s;
+
+    &::before {
+      background: #03a9f4;
+      animation-delay: 2s;
+    }
+  }
+}
+</style>
+<style lang="scss" scoped>
+.loading {
+  $colors: #7ef9ff, #89cff0, #4682b4, #0f52ba, #000080;
+  display: flex;
+  animation-delay: 1s;
+
+  .dot {
+    position: relative;
+    width: 2em;
+    height: 2em;
+    margin: 0.8em;
+    border-radius: 50%;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      border-radius: inherit;
+      animation: wave 2s ease-out infinite;
+    }
+
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        background: nth($colors, $i);
+
+        &::before {
+          animation-delay: $i * 0.2s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes wave {
+  50%,
+  75% {
+    transform: scale(2.5);
+  }
+
+  80%,
+  100% {
+    opacity: 0;
+  }
 }
 </style>

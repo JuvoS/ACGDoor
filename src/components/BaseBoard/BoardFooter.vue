@@ -3,8 +3,6 @@
     <div class="inner">
       <div class="inner-content">
         <a class="source" href="https://github.com/JuvoS/ACGDoor">源码地址</a>
-        <div class="desc">ACGDoor 致力于 ACG 技术学习与研究。</div>
-        <div class="sponsor">目前还没有赞助商。</div>
       </div>
       <div class="inner-power">
         <span class="desc">powered by {{powerInfo}} {{versionInfo}}</span>
