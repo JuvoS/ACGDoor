@@ -1,10 +1,10 @@
 <template>
   <div class="acg">
-    <BoardHeader></BoardHeader>
+    <!-- <BoardHeader></BoardHeader> -->
     <section class="acg-wrapper">
       <slot></slot>
     </section>
-    <BoardFooter></BoardFooter>
+    <!-- <BoardFooter></BoardFooter> -->
   </div>
 </template>
 <script>
