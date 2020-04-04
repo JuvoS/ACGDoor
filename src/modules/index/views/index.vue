@@ -6,6 +6,12 @@
       <h1 class="title slide-bar">I'm alphardex.</h1>
       <p class="subtitle slide-bar">A CSS Wizard</p>
     </header> -->
+    <div class="grid-color">
+      <CardColor></CardColor>
+      <CardColor></CardColor>
+      <CardColor></CardColor>
+      <CardColor></CardColor>
+    </div>
     <lottie
       :options="defaultOptions"
       :height="720"
