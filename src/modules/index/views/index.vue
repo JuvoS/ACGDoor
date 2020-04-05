@@ -1,31 +1,39 @@
 <template>
   <div style="width:100%;min-height:300px;">
-    <!-- <SnowBoard style="width:100%;min-height:300px;"></SnowBoard> -->
     <!-- <VNavTab></VNavTab> -->
     <!-- <header>
       <h1 class="title slide-bar">I'm alphardex.</h1>
       <p class="subtitle slide-bar">A CSS Wizard</p>
-    </header> -->
-    <div class="grid-color">
-      <CardColor></CardColor>
-      <CardColor></CardColor>
-      <CardColor></CardColor>
-      <CardColor></CardColor>
-    </div>
-    <lottie
-      :options="defaultOptions"
-      :height="720"
-      :width="1280"
-      v-on:animCreated="handleAnimation"
-    />
-    <div class="loading">
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-    </div>
-    <div id="lottie" style="width:100%;height:300px;"></div>
+    </header>-->
+    <TipCard title="测试pa">
+      <div slot="pane">pane</div>
+    </TipCard>
+    <TipCard title="测试pa" center>
+      <div slot="pane">
+        <FloorBuildings style="width:100%;min-height:400px;"></FloorBuildings>
+      </div>
+    </TipCard>
+    <TipCard title="雪花背景">
+      <div slot="pane">
+        <SnowBoard style="width:100%;min-height:300px;"></SnowBoard>
+      </div>
+    </TipCard>
+
+    <TipCard title="色彩">
+      <div slot="pane">
+        <div class="grid-color">
+          <CardColor></CardColor>
+          <CardColor></CardColor>
+          <CardColor></CardColor>
+        </div>
+      </div>
+    </TipCard>
+
+    <TipCard title="Lottie动效">
+      <div slot="pane">
+        <div id="lottie" style="width:100%;height:300px;"></div>
+      </div>
+    </TipCard>
   </div>
 </template>
 
@@ -52,7 +60,9 @@ export default {
     SnowBoard,
     LoadingActiona,
     HeadBoxSuba,
-    CardColor
+    CardColor,
+    TipCard: () => import("@/components/Card/TipPane"),
+    FloorBuildings: () => import("@/components/Buildings/Floor")
   },
   data() {
     return {

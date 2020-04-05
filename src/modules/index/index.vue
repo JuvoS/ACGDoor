@@ -8,6 +8,12 @@
 export default {
   components: {
     BaseBoard: () => import("@/components/BaseBoard")
+  },
+  mounted() {
+    //全局字体设定
+    // let offsetWidth = parseInt(document.documentElement.clientWidth) / 60;
+    // document.documentElement.style.fontSize = offsetWidth + "px";
+    document.documentElement.style.fontSize = 12 + "px";
   }
 };
 </script>
