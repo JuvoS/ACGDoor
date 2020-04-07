@@ -4,6 +4,7 @@ import axios from "axios";
 import "@/utils/directives/urlTrans";
 import lottie from "vue-lottie";
 Vue.component("lottie", lottie);
+window._ = require("lodash");
 
 const init = () => {
   Vue.config.productionTip = false;

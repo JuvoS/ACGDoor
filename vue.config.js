@@ -4,7 +4,7 @@ function resolve(dir) {
 }
 module.exports = {
   publicPath: "/",
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     config.resolve.alias
       .set("@", resolve("./src"))
       .set("components", resolve("./src/components"));
@@ -20,20 +20,24 @@ module.exports = {
   pages: {
     index: {
       entry: "src/modules/index/index.js",
-      title: "简历-JuvoS(前端/设计师/插画师)"
+      title: "简历-JuvoS(前端/设计师/插画师)",
+    },
+    lottie: {
+      entry: "src/modules/lottie/index.js",
+      title: "AE动效-JuvoS(lottie)",
     },
     about: {
       entry: "src/modules/about/index.js",
       title: "简历-联系JuvoS(前端/设计师/插画师)",
-      template: "public/index.html"
-    }
+      template: "public/index.html",
+    },
   },
   devServer: {
     host: "localhost",
     port: 8866,
     https: false,
     hotOnly: false,
-    proxy: null // 设置代理
+    proxy: null, // 设置代理
     // before: app => {}
   },
   // 第三方插件配置
@@ -41,7 +45,7 @@ module.exports = {
     // ...
     "style-resources-loader": {
       preProcessor: "sass",
-      patterns: []
-    }
-  }
+      patterns: [],
+    },
+  },
 };
