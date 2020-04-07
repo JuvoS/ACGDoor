@@ -1,13 +1,13 @@
 <template>
-  <BaseBoard>
+  <BoardPane>
     <router-view></router-view>
-  </BaseBoard>
+  </BoardPane>
 </template>
 
 <script>
 export default {
   components: {
-    BaseBoard: () => import("@/components/BaseBoard")
+    BoardPane: () => import("@/components/BaseBoard/BoardPane")
   },
   mounted() {
     //全局字体设定
