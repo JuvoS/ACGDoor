@@ -1,5 +1,5 @@
 <template>
-  <div style="width:100%;min-height:300px;">
+  <div style="width: 100%; min-height: 300px;">
     <!-- <VNavTab></VNavTab> -->
     <!-- <header>
       <h1 class="title slide-bar">I'm alphardex.</h1>
@@ -8,14 +8,14 @@
     <TipCard title="测试pa">
       <div slot="pane">pane</div>
     </TipCard>
-    <TipCard title="测试pa" center>
+    <TipCard title="2D楼宇模型" center>
       <div slot="pane">
-        <FloorBuildings style="width:100%;min-height:400px;"></FloorBuildings>
+        <FloorBuildings style="width: 100%; height: 600px;"></FloorBuildings>
       </div>
     </TipCard>
     <TipCard title="雪花背景">
       <div slot="pane">
-        <SnowBoard style="width:100%;min-height:300px;"></SnowBoard>
+        <SnowBoard style="width: 100%; min-height: 300px;"></SnowBoard>
       </div>
     </TipCard>
 
@@ -31,7 +31,7 @@
 
     <TipCard title="Lottie动效">
       <div slot="pane">
-        <div id="lottie" style="width:100%;height:300px;"></div>
+        <div id="lottie" style="width: 100%; height: 300px;"></div>
       </div>
     </TipCard>
   </div>
@@ -51,8 +51,8 @@ export default {
   props: {
     title: {
       type: String,
-      default: "this"
-    }
+      default: "this",
+    },
   },
   components: {
     ContentLoader,
@@ -62,20 +62,20 @@ export default {
     HeadBoxSuba,
     CardColor,
     TipCard: () => import("@/components/Card/TipPane"),
-    FloorBuildings: () => import("@/components/Buildings/Floor")
+    FloorBuildings: () => import("@/components/Buildings/Floor"),
   },
   data() {
     return {
       defaultOptions: { animationData: animationData.default },
       animationSpeed: 1,
-      anim: {}
+      anim: {},
     };
   },
   methods: {
-    handleAnimation: function(anim) {
+    handleAnimation: function (anim) {
       this.anim = anim;
       console.log(anim); //这里可以看到 lottie 对象的全部属性
-    }
+    },
   },
   mounted() {
     // var animationData = {
@@ -133,12 +133,12 @@ export default {
         renderer: "svg",
         loop: true,
         autoplay: true,
-        animationData: animationData.default
+        animationData: animationData.default,
       };
       var anim;
       anim = lottie.loadAnimation(params);
     });
-  }
+  },
 };
 </script>
 

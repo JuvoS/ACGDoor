@@ -173,13 +173,13 @@ FloorPane.prototype.init = (
   roadTreeMaker(roadTEle);
 
   // 缩放;
-  // let zoomobj = d3.zoom().scaleExtent([0.25, 4]);
-  // let zoom = zoomobj
-  //     .on("zoom", function() {
-  //         svgEle.selectAll("g").attr("transform", d3.event.transform);
-  //     })
-  //     .on("end", function() {});
-  // svgEle.call(zoom).on("wheel", () => d3.event.preventDefault());
+  let zoomobj = d3.zoom().scaleExtent([0.25, 4]);
+  let zoom = zoomobj
+    .on("zoom", function () {
+      svgEle.selectAll("g").attr("transform", d3.event.transform);
+    })
+    .on("end", function () {});
+  svgEle.call(zoom).on("wheel", () => d3.event.preventDefault());
 
   //地下空间
   function underMaker(gEle, obj, index) {

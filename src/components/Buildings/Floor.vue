@@ -36,6 +36,7 @@ export default {
     floorInfoArr(code) {
       let arr = [];
       for (let i = 0; i < 10; i++) {
+        if (code == "Q" && i > 4) continue;
         arr.push({
           id: code + "_" + i,
           floor: i,
