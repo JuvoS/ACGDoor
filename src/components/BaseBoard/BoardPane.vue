@@ -1,17 +1,23 @@
 <template>
-  <div :class="{basicpane:true,'basicpane-wrapper':!isMobile,'basicpane-mwrapper':isMobile}">
-    <BoardMenu></BoardMenu>
+  <div
+    :class="{
+      basicpane: true,
+      'basicpane-wrapper': !isMobile,
+      'basicpane-mwrapper': isMobile,
+    }"
+  >
+    <BoardMenu style="background:#fff"></BoardMenu>
     <slot></slot>
   </div>
 </template>
 <script>
 export default {
   components: {
-    BoardMenu: () => import("./BoardMenu")
+    BoardMenu: () => import("./BoardMenu"),
   },
   data() {
     return {
-      isMobile: false
+      isMobile: false,
     };
   },
   mounted() {
@@ -23,8 +29,8 @@ export default {
         /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
       );
       return flag;
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="less" scoped>
