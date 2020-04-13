@@ -78,12 +78,10 @@
             <i class="ni ni-collection d-lg-none"></i>
             <span class="nav-link-inner--text">Demos</span>
           </a>
-          <router-link to="/landing" class="dropdown-item">Landing</router-link>
-          <router-link to="/profile" class="dropdown-item">Profile</router-link>
-          <router-link to="/login" class="dropdown-item">Login</router-link>
-          <router-link to="/register" class="dropdown-item"
-            >Register</router-link
-          >
+          <a href="/demos" v-urltrans class="dropdown-item">Landing</a>
+          <a href="/demos" v-urltrans class="dropdown-item">Profile</a>
+          <a href="/demos" v-urltrans class="dropdown-item">Login</a>
+          <a href="/demos" v-urltrans class="dropdown-item">Register</a>
         </base-dropdown>
       </ul>
       <ul class="navbar-nav align-items-lg-center ml-lg-auto">
