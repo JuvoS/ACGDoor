@@ -7,7 +7,9 @@ const routes = [
   {
     path: "/",
     name: "about",
-    component: () => import("./views/")
+    components: {
+      default: () => import("./views/")
+    }
   }
 ];
 

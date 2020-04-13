@@ -1,142 +1,122 @@
 <template>
-  <div class="com-markdown-preview">
-    <h3>关于 ACG 中文社区</h3>
-    <p>
-      ACG 中文社区，由一批热爱
-      ACG的工程师/设计师发起，目前已经吸引了互联网各个公司的专业技术人员加入。ACG
-      的开发已经日渐完善，可以开始用 ACG 尝试一些小工具。 目前 ACG
-      的生态以及社区还不完善。特别是国内交流社区更是寥寥无几，如果各位身边有对
-      ACG 感兴趣的，可以拉进群里。 同时，ACG 中文社区网站，大家可以多分享交流。
-    </p>
-    <h3>社区参与须知</h3>
-    <p>
-      ACG 中文社区还有很多工作要做。 不论你对 ACG
-      了解程度如何，都可以有不同的参与方式。
-    </p>
-    <ul>
-      <li>1.你希望什么功能或者特性，可以提 feature issue</li>
-      <li>
-        2.你对 ACG 感兴趣并且有一定程度的了解，可以尝试 ACG-china/website API
-        项目。
-      </li>
-      <li>
-        3.你对 ACG 还不够了解，但对前端比较熟悉，你可以参与 ACG-china/website-fe
-        前端部分。
-      </li>
-      <li>
-        4.你有比较好的文字组织能力，可以撰写 getting start 和 about 相关的内容。
-      </li>
-      <li>
-        5.你有比较好的站长资源，可以帮助网站交换链接 备注：website 和 website-fe
-        参与时，先在 issue 品论区 take 这个任务。
-      </li>
-    </ul>
-    <h3>学习资料</h3>
-    <ul>
-      <li>
-        <a href="https://github.com/JuvoS/ACGDoor"
-          >https://github.com/JuvoS/ACGDoor</a
-        >
-      </li>
-    </ul>
-    <h3>免责声明</h3>
-    <p>注意：社区发表的文章仅代表作者个人观点，与本站无关。</p>
+  <div class="profile-page">
+    <section class="section-profile-cover section-shaped my-0">
+      <div class="shape shape-style-2 shape-default shape-skew alpha-4">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </section>
+    <section class="section section-skew">
+      <div class="container">
+        <card shadow class="card-profile mt--300" no-body>
+          <div class="px-4">
+            <div class="row justify-content-center">
+              <div class="col-lg-3 order-lg-2">
+                <div class="card-profile-image">
+                  <a href="#">
+                    <img
+                      v-lazy="'img/theme/team-4-800x800.jpg'"
+                      class="rounded-circle"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div
+                class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center"
+              >
+                <div class="card-profile-actions py-4 mt-lg-0">
+                  <base-button type="info" size="sm" class="mr-4"
+                    ><i class="fa fa-github mr-2"></i>Github</base-button
+                  >
+                  <base-button type="default" size="sm" class="float-right"
+                    ><i class="fa fa-cloud-download mr-2"></i
+                    >Download</base-button
+                  >
+                </div>
+              </div>
+              <div class="col-lg-4 order-lg-1">
+                <div class="card-profile-stats d-flex justify-content-center">
+                  <div>
+                    <span class="heading">Email</span>
+                    <span class="description">704921698@qq.com</span>
+                  </div>
+                  <div>
+                    <span class="heading">Telphone</span>
+                    <span class="description">18108197129</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center mt-5">
+              <h3>
+                JuvoS Shen
+                <span class="font-weight-light">, 25</span>
+              </h3>
+              <div class="h6 font-weight-300">
+                <i class="ni location_pin mr-2"></i>DaZhou, SiChuan, China
+              </div>
+              <div class="h6 mt-4">
+                <i class="ni business_briefcase-24 mr-2"></i>Weber - Designer -
+                Painter
+              </div>
+              <div>
+                <i class="ni education_hat mr-2"></i>University of Computer
+                Science
+              </div>
+            </div>
+            <div class="mt-5 py-5 border-top text-center">
+              <div class="row justify-content-center">
+                <div class="col-lg-9">
+                  <p>
+                    An artist of considerable range, Ryan — the name taken by
+                    Melbourne-raised, Brooklyn-based Nick Murphy — writes,
+                    performs and records all of his own music, giving it a warm,
+                    intimate feel with a solid groove structure. An artist of
+                    considerable range.
+                  </p>
+                  <a href="/" v-urltrans
+                    >Show more <i class="ni ni-air-baloon"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <CreativeModel></CreativeModel>
+            <!-- <div class="mt-2 py-5 border-top text-center">
+              <div class="row">
+                <div class="col">11</div>
+                <div class="col">11</div>
+                <div class="col">11</div>
+              </div>
+            </div> -->
+            <FeaturesModel></FeaturesModel>
+            <SystemNodel></SystemNodel>
+            <BuildingNodel></BuildingNodel>
+            <CardModel></CardModel>
+            <SoftwareModel></SoftwareModel>
+            <FooterModel></FooterModel>
+          </div>
+        </card>
+      </div>
+    </section>
   </div>
 </template>
-
 <script>
 export default {
-  props: {
-    title: {
-      type: String,
-      default: "this"
-    }
+  components: {
+    CreativeModel: () => import("./comps/creative"),
+    FeaturesModel: () => import("./comps/features"),
+    SystemNodel: () => import("./comps/system"),
+    BuildingNodel: () => import("./comps/building"),
+    CardModel: () => import("./comps/card"),
+    SoftwareModel: () => import("./comps/software"),
+    FooterModel: () => import("./comps/footer")
   }
 };
 </script>
-
-<style scoped>
-.com-markdown-preview,
-.editor-preview-active,
-.editor-preview-active-side {
-  background: #fff !important;
-  padding: 20px;
-  font-size: 16px;
-  color: #666;
-  font-family: Helvetica Neue, Arial, Hiragino Sans GB, STHeiti, Microsoft YaHei,
-    serif;
-  -moz-tab-size: 4;
-  tab-size: 4;
-  word-break: break-all;
-}
-.com-markdown-preview > :first-child,
-.editor-preview-active-side > :first-child,
-.editor-preview-active > :first-child {
-  margin-top: 0 !important;
-}
-.com-markdown-preview h3,
-.editor-preview-active-side h3,
-.editor-preview-active h3 {
-  font-size: 1.25em;
-  font-weight: 600;
-  line-height: 1.25;
-  margin: 24px 0 16px;
-}
-
-.com-markdown-preview p,
-.editor-preview-active-side p,
-.editor-preview-active p {
-  font-size: 16px;
-  line-height: 1.8;
-  margin: 0 0 16px;
-}
-.com-markdown-preview ol,
-.com-markdown-preview ul,
-.editor-preview-active-side ol,
-.editor-preview-active-side ul,
-.editor-preview-active ol,
-.editor-preview-active ul {
-  padding-left: 2em;
-  margin-bottom: 16px;
-  margin-top: 0;
-}
-.com-markdown-preview ol li,
-.com-markdown-preview ul li,
-.editor-preview-active-side ol li,
-.editor-preview-active-side ul li,
-.editor-preview-active ol li,
-.editor-preview-active ul li {
-  line-height: 1.5;
-}
-</style>
-<style>
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0;
-  margin-bottom: 0.5em;
-  color: rgba(0, 0, 0, 0.85);
-  font-weight: 500;
-}
-p {
-  margin-top: 0;
-  margin-bottom: 1em;
-}
-dl,
-ol,
-ul {
-  margin-top: 0;
-  margin-bottom: 1em;
-}
-a {
-  color: #1890ff;
-  text-decoration: none;
-  background-color: transparent;
-  outline: none;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-</style>
+<style></style>

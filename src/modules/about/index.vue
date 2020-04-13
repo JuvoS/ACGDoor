@@ -1,35 +1,20 @@
 <template>
-  <BaseBoard>
-    <router-view></router-view>
-  </BaseBoard>
+  <div id="app">
+    <router-view name="header"></router-view>
+    <main>
+      <fade-transition origin="center" mode="out-in" :duration="250">
+        <router-view />
+      </fade-transition>
+    </main>
+    <router-view name="footer"></router-view>
+  </div>
 </template>
-
 <script>
+import { FadeTransition } from "vue2-transitions";
+
 export default {
   components: {
-    BaseBoard: () => import("@/components/BaseBoard")
+    FadeTransition
   }
 };
 </script>
-
-<style>
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-body {
-  position: relative;
-  background: #f0f2f5;
-  min-height: 100vh;
-  width: 100%;
-  color: #333;
-  /* height: auto !important; */
-}
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  outline: none;
-}
-</style>

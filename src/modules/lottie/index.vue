@@ -1,14 +1,10 @@
 <template>
-  <BaseBoard>
-    <router-view></router-view>
-  </BaseBoard>
+  <router-view></router-view>
 </template>
 
 <script>
 export default {
-  components: {
-    BaseBoard: () => import("@/components/BaseBoard")
-  },
+  components: {},
   mounted() {
     //全局字体设定
     // let offsetWidth = parseInt(document.documentElement.clientWidth) / 60;
