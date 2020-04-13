@@ -3,7 +3,7 @@
     <!-- <img-content></img-content>
     <img-content offset="right"></img-content>-->
     <!-- <TitleWrap></TitleWrap> -->
-    <!-- <AutoHeader></AutoHeader> -->
+    <AutoHeader></AutoHeader>
     <!-- <BaseGraph ref="pregraph" style="width:100%;height:500px;"></BaseGraph> -->
     <!-- <MixanBoard style="width:100%;height:400px"></MixanBoard> -->
     <!-- <DrawDemo></DrawDemo> -->

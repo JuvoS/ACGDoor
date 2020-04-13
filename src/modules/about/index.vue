@@ -1,13 +1,13 @@
 <template>
-  <BaseBoard>
+  <SingleBoard>
     <router-view></router-view>
-  </BaseBoard>
+  </SingleBoard>
 </template>
 
 <script>
 export default {
   components: {
-    BaseBoard: () => import("@/components/BaseBoard")
+    SingleBoard: () => import("@/components/Single/SingleBoard")
   }
 };
 </script>
