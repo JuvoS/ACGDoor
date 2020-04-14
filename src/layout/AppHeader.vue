@@ -1,15 +1,13 @@
 <template>
-  <header class="header-global">
-    <base-nav class="navbar-main" transparent type="" effect="light" expand>
+  <header :class="{'header-global':true,' fixed-top':fixed,'bg-dark':withBg}">
+    <base-nav class="navbar-main" :transparent="transparent" type effect="light" expand>
       <router-link slot="brand" class="navbar-brand mr-lg-5" to="/">
         <img src="resume/brand/white.png" alt="logo" />
       </router-link>
 
       <div class="row" slot="content-header" slot-scope="{ closeMenu }">
         <div class="col-6 collapse-brand">
-          <a
-            href="https://demos.creative-tim.com/vue-argon-design-system/documentation/"
-          >
+          <a href="https://demos.creative-tim.com/vue-argon-design-system/documentation/">
             <img src="img/brand/blue.png" />
           </a>
         </div>
@@ -20,13 +18,7 @@
 
       <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
         <base-dropdown class="nav-item" menu-classes="dropdown-menu-xl">
-          <a
-            slot="title"
-            href="#"
-            class="nav-link"
-            data-toggle="dropdown"
-            role="button"
-          >
+          <a slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button">
             <i class="ni ni-ui-04 d-lg-none"></i>
             <span class="nav-link-inner--text">Examples</span>
           </a>
@@ -35,9 +27,7 @@
               href="https://demos.creative-tim.com/vue-argon-design-system/documentation/"
               class="media d-flex align-items-center"
             >
-              <div
-                class="icon icon-shape bg-gradient-primary rounded-circle text-white"
-              >
+              <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
                 <i class="ni ni-spaceship"></i>
               </div>
               <div class="media-body ml-3">
@@ -52,9 +42,7 @@
               href="https://demos.creative-tim.com/vue-argon-design-system/documentation/"
               class="media d-flex align-items-center"
             >
-              <div
-                class="icon icon-shape bg-gradient-warning rounded-circle text-white"
-              >
+              <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
                 <i class="ni ni-ui-04"></i>
               </div>
               <div class="media-body ml-3">
@@ -68,13 +56,7 @@
           </div>
         </base-dropdown>
         <base-dropdown tag="li" class="nav-item">
-          <a
-            slot="title"
-            href="#"
-            class="nav-link"
-            data-toggle="dropdown"
-            role="button"
-          >
+          <a slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button">
             <i class="ni ni-collection d-lg-none"></i>
             <span class="nav-link-inner--text">Demos</span>
           </a>
@@ -95,7 +77,7 @@
             title="Watch me on Github"
           >
             <i class="fa fa-github mr-2"></i>
-            <span class="nav-link-inner--text ">Github</span>
+            <span class="nav-link-inner--text">Github</span>
           </a>
         </li>
         <li class="nav-item">
@@ -109,7 +91,7 @@
             title="About JuvoS"
           >
             <i class="fa fa-address-card mr-2"></i>
-            <span class="nav-link-inner--text ">About</span>
+            <span class="nav-link-inner--text">About</span>
           </a>
         </li>
       </ul>
@@ -122,6 +104,24 @@ import BaseDropdown from "@/components/BaseDropdown";
 import CloseButton from "@/components/CloseButton";
 
 export default {
+  props: {
+    fixed: {
+      type: Boolean,
+      default: false
+    },
+    withBg: {
+      type: Boolean,
+      default: false
+    },
+    effectStatus: {
+      type: String,
+      default: "light"
+    },
+    transparent: {
+      type: Boolean,
+      default: true
+    }
+  },
   components: {
     BaseNav,
     CloseButton,

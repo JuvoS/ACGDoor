@@ -11,8 +11,8 @@ const routes = [
     name: "Demos",
     components: {
       header: AppHeader,
-      default: () => import("./views/"),
-      footer: AppFooter
+      default: () => import("./views/")
+      // footer: AppFooter
     }
   }
 ];
