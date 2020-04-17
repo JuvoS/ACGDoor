@@ -1,22 +1,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import AppHeader from "@/layout/AppHeader";
-import AppFooter from "@/layout/AppFooter";
+import routes from "./menu";
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
-    path: "/",
-    name: "Demos",
-    components: {
-      header: AppHeader,
-      default: () => import("./views/")
-      // footer: AppFooter
-    }
-  }
-];
-
 export default new VueRouter({
-  routes: routes
+  mode: "hash",
+  routes: routes,
 });
