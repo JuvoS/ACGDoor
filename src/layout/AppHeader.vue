@@ -1,6 +1,12 @@
 <template>
   <header :class="{'header-global':true,' fixed-top':fixed,'bg-dark':withBg}">
-    <base-nav class="navbar-main" :transparent="transparent" type effect="light" expand>
+    <base-nav
+      :class="{'navbar-main':true,'ct-navbar':ctnav}"
+      :transparent="transparent"
+      type
+      effect="light"
+      expand
+    >
       <router-link slot="brand" class="navbar-brand mr-lg-5" to="/">
         <img src="resume/brand/white.png" alt="logo" />
       </router-link>
@@ -120,6 +126,10 @@ export default {
     transparent: {
       type: Boolean,
       default: true
+    },
+    ctnav: {
+      type: Boolean,
+      default: false
     }
   },
   components: {
@@ -129,4 +139,11 @@ export default {
   }
 };
 </script>
-<style></style>
+<style lang="less" scoped>
+.ct-navbar {
+  background-color: #5e72e4;
+  box-shadow: 0 1px 1px 0 rgba(116, 129, 141, 0.1);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+</style>

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view name="header"></router-view>
+    <router-view name="header" fixed ctnav></router-view>
     <!-- <main> -->
     <fade-transition origin="center" mode="out-in" :duration="250">
       <router-view />
@@ -14,7 +14,8 @@
 import { FadeTransition } from "vue2-transitions";
 export default {
   components: {
-    FadeTransition,
-  },
+    FadeTransition
+  }
 };
 </script>
+

@@ -48,39 +48,15 @@
           />
         </div>
       </div>
-      <h3 class="h4 text-success font-weight-bold mt-md mb-4">Datepicker</h3>
-      <div class="card shadow mb-4">
-        <div class="card-body">
-          <a @click="routerTo">555</a>
-          <div class="tab-pane fade" style="display: none;">
-            <p class="description">
-              Raw denim you probably haven't heard of them jean shorts Austin.
-              Nesciunt tofu stumptown aliqua, retro synth master cleanse.
-              Mustache cliche tempor, williamsburg carles vegan helvetica.
-              Reprehenderit butcher retro keffiyeh dreamcatcher synth.
-            </p>
-            <p class="description">
-              Raw denim you probably haven't heard of them jean shorts Austin.
-              Nesciunt tofu stumptown aliqua, retro synth master cleanse.
-            </p>
-          </div>
-          <div class="tab-pane fade active show" style aria-expanded="true">
-            <p class="description">
-              Cosby sweater eu banh mi, qui irure terry richardson ex squid.
-              Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan
-              american apparel, butcher voluptate nisi qui.
-            </p>
-          </div>
-          <div class="tab-pane fade" style="display: none;">
-            <p class="description">
-              Raw denim you probably haven't heard of them jean shorts Austin.
-              Nesciunt tofu stumptown aliqua, retro synth master cleanse.
-              Mustache cliche tempor, williamsburg carles vegan helvetica.
-              Reprehenderit butcher retro keffiyeh dreamcatcher synth.
-            </p>
-          </div>
-        </div>
-      </div>
+
+      <CardInfo></CardInfo>
+      <CardInfo card></CardInfo>
+      <CardDescription></CardDescription>
+      <CardDescription card></CardDescription>
+      <CardImage></CardImage>
+      <CardImage card></CardImage>
+      <ImageSlider></ImageSlider>
+      <SliderBlur></SliderBlur>
     </div>
   </section>
 </template>
@@ -89,14 +65,34 @@
 export default {
   components: {
     StartModel: () => import("./comps/start"),
-    ScreenshotModel: () => import("./comps/screenshot")
+    ScreenshotModel: () => import("./comps/screenshot"),
+    BasicCard: () => import("./comps/BasicCard"),
+    CardInfo: () => import("./comps/CardInfo"),
+    CardDescription: () => import("./comps/CardDescription"),
+    CardImage: () => import("./comps/CardImage"),
+    ImageSlider: () => import("./comps/ImageSlider"),
+    SliderBlur: () => import("./comps/SliderBlur")
   },
+  computed: {
+    queryId() {
+      return this.$route.query.userId;
+    }
+  },
+  watch: {
+    queryId(v) {
+      console.log("this.$route.query ->", v);
+    }
+  },
+
   mounted() {
     console.log("this.$route.query ->", this.$route, this.$route.query);
   },
   methods: {
     routerTo() {
-      this.$router.push({ path: "/query", query: { userId: 123 } });
+      this.$router.push({
+        path: "/query",
+        query: { userId: _.random(1000, 9999) }
+      });
     }
   }
 };

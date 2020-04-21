@@ -15,6 +15,15 @@ const routes = [
       footer: AppFooter,
     },
   },
+  {
+    path: "/query",
+    name: "Query",
+    components: {
+      header: AppHeader,
+      default: () => import("./views/query"),
+      footer: AppFooter,
+    },
+  },
 ];
 
 export default new VueRouter({
