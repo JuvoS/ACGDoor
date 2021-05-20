@@ -20,7 +20,8 @@ module.exports = {
   pages: {
     index: {
       entry: "src/modules/index/index.js",
-      title: "简历-JuvoS(前端/设计师/插画师)",
+      title: "JuvoS",
+      // title: "简历-JuvoS(前端/设计师/插画师)",
     },
     lottie: {
       entry: "src/modules/lottie/index.js",

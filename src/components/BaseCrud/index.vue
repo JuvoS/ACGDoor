@@ -19,12 +19,28 @@
             </template>
         </CrudTools>
         <div class="crud-full">
-            <a-table :columns="tableColumns" :data-source="tableData" :scroll="{ x: 1500, y: 300 }" bordered>
+            <a-table class="crud-mb-10" :columns="tableColumns" :data-source="tableData" :scroll="{ x: 1500, y: 300 }" bordered :pagination="false">
                 <template slot="action" slot-scope="record">
                     <a-button v-if="edit" :disabled="record.editing" icon="form" type="primary" @click="onEdit(record)">编辑</a-button>
                     <slot name="tool" :cell="record"></slot>
                 </template>
             </a-table>
+            <div class="crud-center">
+                <a-pagination
+                v-model="current"
+                :page-size-options="pageSizeOptions"
+                :total="total"
+                show-size-changer
+                show-quick-jumper
+                :page-size="pageSize"
+                @showSizeChange="onShowSizeChange"
+            >
+                <template slot="buildOptionText" slot-scope="props">
+                <span v-if="props.value !== '50'">{{ props.value }}条/页</span>
+                <span v-if="props.value === '50'">全部</span>
+                </template>
+            </a-pagination>
+            </div>
         </div>
         <a-modal v-model="modelFlag" :title="modelStatus + title" @ok="handleOk">
             <slot name="add"></slot>
@@ -63,7 +79,12 @@ export default {
             tableData: [],
 
             modelFlag: false,
-            modelStatus: '新建'
+            modelStatus: '新建',
+
+            pageSizeOptions: ['10', '20', '30', '40', '50'],
+            current: 1,
+            pageSize: 10,
+            total: 50,
         }
     },
     mounted(){
@@ -126,7 +147,10 @@ for (let i = 0; i < 100; i++) {
         },
         handleOk(){
             this.modelFlag = false;
-        }
+        },
+        onShowSizeChange(current, pageSize) {
+            this.pageSize = pageSize;
+        },
     }
 }
 </script>
@@ -139,6 +163,10 @@ for (let i = 0; i < 100; i++) {
         &-10 {
             margin-bottom: 10px;
         }
+    }
+    &-center {
+        margin: 0 auto;
+        text-align: center;
     }
 }
 </style>
