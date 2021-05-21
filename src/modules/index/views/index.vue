@@ -41,9 +41,10 @@
     <!-- <button @click="isShowBTree = !isShowBTree">
       {{ isShowBTree ? "B Tree" : "C Tree" }}
     </button> -->
-    <ATreeB v-if="isShowBTree"></ATreeB>
-    <ATreeC v-if="!isShowBTree"></ATreeC>
+    <!-- <ATreeB v-if="isShowBTree"></ATreeB>
+    <ATreeC v-if="!isShowBTree"></ATreeC> -->
     <!-- <BasicTree></BasicTree> -->
+    <GradeTable></GradeTable>
   </div>
 </template>
 
@@ -67,6 +68,7 @@ export default {
     ATreeB: () => import("@/components/ATree/ATreeB"),
     ATreeC: () => import("@/components/ATree/ATreeC"),
     BasicTree: () => import("@/components/ATree/BasicTree"),
+    GradeTable: () => import("@/components/Table/GradeTable"),
     // BaseGraph,
   },
   data() {
