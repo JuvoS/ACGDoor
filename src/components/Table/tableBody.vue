@@ -1,75 +1,40 @@
 <template>
-  <div class="grade-table">
-    <div class="grade-header">
-      <table border="1" id="grade-header">
-        <thead>
-          <template v-for="(columns, index) in tableColumn">
-            <tr :key="index">
-              <th
-                v-for="(cell, key) in columns"
-                :key="index + '_' + key"
-                :rowspan="cell.rowNum ? cell.rowNum : 1"
-                :colspan="cell.colNum ? cell.colNum : 1"
-                class="table-thead table-cell"
-              >
-                {{ cell.title }}
-              </th>
-            </tr>
-          </template>
-        </thead>
-      </table>
-    </div>
-    <div class="grade-body" id="grade-body" :style="{ width: tableBodyWidth }">
-      <table border="1">
-        <thead>
-          <template v-for="(columns, index) in tableColumn">
-            <tr :key="index">
-              <th
-                v-for="(cell, key) in columns"
-                :key="index + '_' + key"
-                :rowspan="cell.rowNum ? cell.rowNum : 1"
-                :colspan="cell.colNum ? cell.colNum : 1"
-                class="table-thead table-cell"
-                style="display: none;"
-              >
-                {{ cell.title }}
-              </th>
-            </tr>
-          </template>
-        </thead>
+  <table border="1">
+    <thead>
+      <template v-for="(columns, index) in tableColumn">
+        <tr :key="index">
+          <th
+            v-for="(cell, key) in columns"
+            :key="index + '_' + key"
+            :rowspan="cell.rowNum ? cell.rowNum : 1"
+            :colspan="cell.colNum ? cell.colNum : 1"
+            class="table-thead table-cell"
+            style="display: none;"
+          >
+            {{ cell.title }}
+          </th>
+        </tr>
+      </template>
+    </thead>
 
-        <tbody>
-          <template v-for="(columns, index) in tableArr">
-            <tr :key="index">
-              <td
-                v-for="(cell, key) in columns"
-                :key="index + '_' + key"
-                :rowspan="cell.rowNum ? cell.rowNum : 1"
-                :colspan="cell.colNum ? cell.colNum : 1"
-                class="table-cell"
-                :class="{
-                  'table-cell': true,
-                  'table-body-cell-one': index === 0,
-                  'table-cell-active':
-                    activeRowIndex === index && activeColIndex === key,
-                  'table-cell-choice': !cell.isInfo,
-                }"
-                @click="!cell.isInfo ? choiceRowCol(index, key) : ''"
-              >
-                <div>
-                  {{ cell.title ? cell.title : "-" }}
-                </div>
-              </td>
-            </tr>
-          </template>
-        </tbody>
-      </table>
-    </div>
-  </div>
+    <tbody>
+      <template v-for="(columns, index) in tableArr">
+        <tr :key="index">
+          <td
+            v-for="(cell, key) in columns"
+            :key="index + '_' + key"
+            :rowspan="cell.rowNum ? cell.rowNum : 1"
+            :colspan="cell.colNum ? cell.colNum : 1"
+            class="table-cell"
+          >
+            {{ cell.title ? cell.title : "-" }}
+          </td>
+        </tr>
+      </template>
+    </tbody>
+  </table>
 </template>
 <script>
-import TableHeader from "./tableHeader";
-import TableBody from "./tableBody";
 export default {
   props: {
     column: {
@@ -80,40 +45,18 @@ export default {
       type: Array,
       default: [],
     },
-    options: {
-      type: Object,
-      default: () => {
-        return {
-          bodyHeight: "300px",
-        };
-      },
-    },
-  },
-  components: {
-    "table-header": TableHeader,
-    "table-body": TableBody,
   },
   data() {
     return {
       tableColumn: [],
       tableArr: [],
-      tableBodyWidth: "100%",
-      activeRowIndex: null,
-      activeColIndex: null,
     };
   },
   mounted() {
-    this.initGradeTable(this.column, this.tableData);
+    this.tableColumn = this.formateColumn(this.column);
+    this.tableArr = this.formateGrade(this.tableData);
   },
   methods: {
-    initGradeTable(column, tableData) {
-      this.tableColumn = this.formateColumn(column);
-      this.tableArr = this.formateGrade(tableData);
-      this.$nextTick(() => {
-        this.tableBodyWidth =
-          document.getElementById("grade-header").offsetWidth + "px";
-      });
-    },
     fetchRowChild(obj) {
       let depthNum = 0;
       function treeRowChild(obj, level = 0) {
@@ -277,7 +220,8 @@ export default {
         ele = [...eleChild, ...eleAppendChild];
         cellArr.push([...eleChild, ...eleAppendChild]);
       });
-      console.log("cellArr ->", cellArr);
+
+      console.log("arr ->", cellArr);
       return cellArr;
     },
     getArrMaxChildLens(arr) {
@@ -300,56 +244,18 @@ export default {
       }
       return arr;
     },
-    choiceRowCol(rowIndex, colIndex) {
-      if (
-        this.activeRowIndex === rowIndex &&
-        this.activeColIndex === colIndex
-      ) {
-        this.activeRowIndex = null;
-        this.activeColIndex = null;
-      } else {
-        this.activeRowIndex = rowIndex;
-        this.activeColIndex = colIndex;
-      }
-    },
   },
 };
 </script>
 <style lang="less" scoped>
-.grade-table {
-  width: 100%;
-  min-height: 300px;
-  overflow: hidden;
-  overflow-x: auto;
-  display: inline-block;
-}
-.grade-table table {
-  border: 1px solid #dbdbdb;
-}
-.grade-table .table-body-cell-one {
-  border-top: 0;
-}
-.grade-header {
-  font-size: 14px;
-}
-.grade-body {
-  height: 300px;
-  overflow: hidden;
-  overflow-y: auto;
-  font-size: 12px;
-}
-.grade-table .table-thead {
-  background: #e8e8e8;
-}
-.grade-table .table-cell {
-  text-align: center;
-  min-width: 120px;
-  height: 40px;
-}
-.grade-table .table-cell-choice {
-  cursor: pointer;
-}
-.grade-table .table-cell-active {
-  background: #ccc;
+.table {
+  &-thead {
+    background: #ccc;
+  }
+  &-cell {
+    text-align: center;
+    min-width: 120px;
+    height: 40px;
+  }
 }
 </style>
